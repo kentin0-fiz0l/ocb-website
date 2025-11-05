@@ -4,8 +4,17 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Home">
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-orange-light to-orange-warm text-white py-20 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative bg-gradient-to-br from-orange-light to-orange-warm text-white py-20 lg:py-32 overflow-hidden">
+    <!-- White Chocolate Drip Animation -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="white-chocolate-drip" style="left: 15%; animation-delay: 0s;"></div>
+      <div class="white-chocolate-drip" style="left: 35%; animation-delay: 0.5s;"></div>
+      <div class="white-chocolate-drip" style="left: 55%; animation-delay: 1s;"></div>
+      <div class="white-chocolate-drip" style="left: 75%; animation-delay: 0.3s;"></div>
+      <div class="white-chocolate-drip" style="left: 85%; animation-delay: 0.8s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center">
         <h1 class="text-5xl lg:text-7xl font-bold mb-6 text-white drop-shadow-lg">
           Orange Chocolate Bakery
@@ -26,14 +35,46 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-
-    <!-- Decorative wave -->
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#fef9f3"/>
-      </svg>
-    </div>
   </section>
+
+  <style>
+    @keyframes drip {
+      0% {
+        height: 0;
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 0.6;
+      }
+      100% {
+        height: 100%;
+        opacity: 0.3;
+      }
+    }
+
+    .white-chocolate-drip {
+      position: absolute;
+      top: 0;
+      width: 3px;
+      height: 0;
+      background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.7) 20%,
+        rgba(255, 255, 255, 0.5) 40%,
+        rgba(255, 255, 255, 0.3) 60%,
+        rgba(255, 255, 255, 0.1) 80%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: drip 4s ease-in infinite;
+      border-radius: 0 0 50% 50%;
+    }
+
+    .white-chocolate-drip:nth-child(1) { width: 4px; }
+    .white-chocolate-drip:nth-child(2) { width: 3px; }
+    .white-chocolate-drip:nth-child(3) { width: 5px; }
+    .white-chocolate-drip:nth-child(4) { width: 3px; }
+    .white-chocolate-drip:nth-child(5) { width: 4px; }
+  </style>
 
   <!-- Our Story Section -->
   <section class="py-20 bg-cream">
