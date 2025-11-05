@@ -22,22 +22,40 @@ import Layout from '../layouts/Layout.astro';
         <div class="bg-white rounded-2xl shadow-xl p-8">
           <h2 class="text-3xl font-bold mb-6 text-chocolate">Order Form</h2>
           <p class="text-chocolate/70 mb-8">
-            Fill out the form below and we'll get back to you within 24 hours to confirm your order details and pickup time.
+            📞 Call/Text: <a href="tel:+14085551234" class="text-orange-warm font-semibold hover:underline">(408) 555-OCB1</a><br/>
+            ✉️ Email: <a href="mailto:hello@orangechocolatebakery.com" class="text-orange-warm font-semibold hover:underline">hello@orangechocolatebakery.com</a><br/>
+            <span class="text-sm">Or fill out the form below—we'll respond within 24 hours!</span>
           </p>
 
           <form id="order-form" class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-semibold text-chocolate mb-2">
-                Your Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
-                placeholder="Jane Doe"
-              />
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-chocolate mb-2">
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
+                  placeholder="Jane Doe"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-chocolate mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
+                  placeholder="(408) 555-1234"
+                />
+              </div>
             </div>
 
             <div>
@@ -55,49 +73,99 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div>
-              <label for="phone" class="block text-sm font-semibold text-chocolate mb-2">
-                Phone Number *
+              <label for="order-type" class="block text-sm font-semibold text-chocolate mb-2">
+                Order Type *
+              </label>
+              <select
+                id="order-type"
+                name="order-type"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition bg-white"
+              >
+                <option value="">Select an option...</option>
+                <option value="signature-loaf">Signature Chocolate-Orange Loaf ($26)</option>
+                <option value="cookies-half">Triple Chocolate Cookies - Half Dozen ($10)</option>
+                <option value="cookies-dozen">Triple Chocolate Cookies - Dozen ($18)</option>
+                <option value="flourless-torte">Flourless Fudge Torte ($32)</option>
+                <option value="sampler-box">Discovery Sampler Box ($35)</option>
+                <option value="winter-spice">Winter Spice Loaf - Seasonal ($28)</option>
+                <option value="gift-set">Mini Loaves Gift Set ($42)</option>
+                <option value="custom">Custom Order</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="quantity" class="block text-sm font-semibold text-chocolate mb-2">
+                Quantity *
               </label>
               <input
-                type="tel"
-                id="phone"
-                name="phone"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                value="1"
                 required
                 class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
-                placeholder="(408) 555-1234"
               />
             </div>
 
             <div>
-              <label for="items" class="block text-sm font-semibold text-chocolate mb-2">
-                What would you like to order? *
+              <label for="occasion" class="block text-sm font-semibold text-chocolate mb-2">
+                Special Occasion? (Optional)
               </label>
-              <textarea
-                id="items"
-                name="items"
-                required
-                rows="4"
-                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition resize-none"
-                placeholder="Example: 2 loaf cakes, 1 dozen cookies"
-              ></textarea>
+              <select
+                id="occasion"
+                name="occasion"
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition bg-white"
+              >
+                <option value="">Just because!</option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="wedding">Wedding/Shower</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="holiday">Holiday Celebration</option>
+                <option value="thank-you">Thank You Gift</option>
+                <option value="other">Other</option>
+              </select>
             </div>
 
             <div>
               <label for="pickup-date" class="block text-sm font-semibold text-chocolate mb-2">
-                Preferred Pickup Date
+                Preferred Pickup Date *
               </label>
               <input
                 type="date"
                 id="pickup-date"
                 name="pickup-date"
+                required
                 class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
               />
-              <p class="text-sm text-chocolate/60 mt-2">Please allow 2-3 days for order preparation</p>
+              <p class="text-sm text-chocolate/60 mt-2">⏰ Please allow 2-3 business days for preparation</p>
+            </div>
+
+            <div>
+              <label for="contact-preference" class="block text-sm font-semibold text-chocolate mb-2">
+                Preferred Contact Method *
+              </label>
+              <div class="flex gap-4">
+                <label class="flex items-center cursor-pointer">
+                  <input type="radio" name="contact-preference" value="email" checked class="mr-2 text-orange-warm focus:ring-orange-warm" />
+                  <span class="text-chocolate">Email</span>
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input type="radio" name="contact-preference" value="phone" class="mr-2 text-orange-warm focus:ring-orange-warm" />
+                  <span class="text-chocolate">Phone</span>
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input type="radio" name="contact-preference" value="text" class="mr-2 text-orange-warm focus:ring-orange-warm" />
+                  <span class="text-chocolate">Text</span>
+                </label>
+              </div>
             </div>
 
             <div>
               <label for="message" class="block text-sm font-semibold text-chocolate mb-2">
-                Special Requests or Questions
+                Additional Details or Special Requests
               </label>
               <textarea
                 id="message"
