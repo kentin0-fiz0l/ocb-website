@@ -1,0 +1,291 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Order" description="Order fresh chocolate-orange baked goods from Orange Chocolate Bakery in Campbell, CA.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-orange-warm to-orange-light text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl lg:text-6xl font-bold mb-4">Place Your Order</h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto">
+        Fresh, handcrafted treats made just for you
+      </p>
+    </div>
+  </section>
+
+  <!-- Order Form & Info Section -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+
+        <!-- Contact Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <h2 class="text-3xl font-bold mb-6 text-chocolate">Order Form</h2>
+          <p class="text-chocolate/70 mb-8">
+            Fill out the form below and we'll get back to you within 24 hours to confirm your order details and pickup time.
+          </p>
+
+          <form id="order-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-chocolate mb-2">
+                Your Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
+                placeholder="Jane Doe"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-semibold text-chocolate mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
+                placeholder="jane@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-chocolate mb-2">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
+                placeholder="(408) 555-1234"
+              />
+            </div>
+
+            <div>
+              <label for="items" class="block text-sm font-semibold text-chocolate mb-2">
+                What would you like to order? *
+              </label>
+              <textarea
+                id="items"
+                name="items"
+                required
+                rows="4"
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition resize-none"
+                placeholder="Example: 2 loaf cakes, 1 dozen cookies"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="pickup-date" class="block text-sm font-semibold text-chocolate mb-2">
+                Preferred Pickup Date
+              </label>
+              <input
+                type="date"
+                id="pickup-date"
+                name="pickup-date"
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
+              />
+              <p class="text-sm text-chocolate/60 mt-2">Please allow 2-3 days for order preparation</p>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold text-chocolate mb-2">
+                Special Requests or Questions
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition resize-none"
+                placeholder="Any dietary restrictions, custom requests, or questions?"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-orange-warm hover:bg-orange-light text-white font-semibold py-4 rounded-lg transition shadow-lg hover:shadow-xl"
+            >
+              Submit Order Request
+            </button>
+
+            <p class="text-sm text-chocolate/60 text-center">
+              * Required fields
+            </p>
+          </form>
+
+          <div id="form-message" class="mt-4 hidden"></div>
+        </div>
+
+        <!-- Order Information -->
+        <div class="space-y-8">
+
+          <!-- Pickup Information -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-start space-x-4">
+              <div class="bg-orange-warm/10 p-3 rounded-lg">
+                <svg class="w-8 h-8 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-chocolate">Pickup Location</h3>
+                <p class="text-chocolate/80 mb-2">
+                  Campbell, CA
+                </p>
+                <p class="text-chocolate/70 text-sm">
+                  Exact address will be provided upon order confirmation
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- How It Works -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-chocolate">How It Works</h3>
+            <div class="space-y-6">
+
+              <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-orange-warm text-white rounded-full flex items-center justify-center font-bold">
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold text-chocolate mb-1">Submit Your Request</h4>
+                  <p class="text-chocolate/70 text-sm">
+                    Fill out the order form with your details and desired items.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-orange-warm text-white rounded-full flex items-center justify-center font-bold">
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold text-chocolate mb-1">Order Confirmation</h4>
+                  <p class="text-chocolate/70 text-sm">
+                    We'll contact you within 24 hours to confirm availability, pricing, and pickup time.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-orange-warm text-white rounded-full flex items-center justify-center font-bold">
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold text-chocolate mb-1">Fresh Preparation</h4>
+                  <p class="text-chocolate/70 text-sm">
+                    Your treats are freshly baked with love (allow 2-3 days).
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-orange-warm text-white rounded-full flex items-center justify-center font-bold">
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold text-chocolate mb-1">Pickup & Enjoy!</h4>
+                  <p class="text-chocolate/70 text-sm">
+                    Pick up your order at the confirmed time and enjoy!
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Payment & Pricing -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold mb-4 text-chocolate">Payment & Pricing</h3>
+            <ul class="space-y-3 text-chocolate/80">
+              <li class="flex items-start space-x-2">
+                <span class="text-orange-warm mt-1">✓</span>
+                <span>Payment accepted via Venmo, Zelle, or cash at pickup</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-orange-warm mt-1">✓</span>
+                <span>Final pricing confirmed before order preparation</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-orange-warm mt-1">✓</span>
+                <span>Custom orders available - <a href="/menu" class="text-orange-warm hover:text-chocolate underline">view our menu</a></span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-chocolate">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        <div class="bg-cream rounded-xl p-6">
+          <h4 class="text-xl font-bold text-chocolate mb-2">How far in advance should I order?</h4>
+          <p class="text-chocolate/80">
+            We recommend placing orders at least 2-3 days in advance to ensure availability and proper preparation time.
+          </p>
+        </div>
+
+        <div class="bg-cream rounded-xl p-6">
+          <h4 class="text-xl font-bold text-chocolate mb-2">Do you deliver?</h4>
+          <p class="text-chocolate/80">
+            Currently, we only offer pickup in Campbell, CA. Delivery options may be available in the future.
+          </p>
+        </div>
+
+        <div class="bg-cream rounded-xl p-6">
+          <h4 class="text-xl font-bold text-chocolate mb-2">Can I place a bulk order for an event?</h4>
+          <p class="text-chocolate/80">
+            Yes! We love catering to special events. Please mention your event details in the order form and we'll work with you on pricing and quantities.
+          </p>
+        </div>
+
+        <div class="bg-cream rounded-xl p-6">
+          <h4 class="text-xl font-bold text-chocolate mb-2">Are your products certified gluten-free or nut-free?</h4>
+          <p class="text-chocolate/80">
+            Our flourless cake is made without gluten-containing ingredients and none of our recipes contain almonds. However, as a cottage food operation, we cannot guarantee 100% allergen-free products. Please contact us with specific allergy concerns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('order-form') as HTMLFormElement;
+    const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Show success message (in production, this would send to a backend or email service)
+      messageDiv.className = 'mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg';
+      messageDiv.textContent = 'Thank you! Your order request has been received. We\'ll contact you within 24 hours to confirm details.';
+      messageDiv.classList.remove('hidden');
+
+      // Reset form
+      form.reset();
+
+      // Scroll to message
+      messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        messageDiv.classList.add('hidden');
+      }, 5000);
+    });
+  </script>
+</Layout>

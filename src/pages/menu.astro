@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Menu" description="Explore our delicious chocolate-orange baked goods, including loaf cakes, cookies, and flourless cakes.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-chocolate to-cocoa text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl lg:text-6xl font-bold mb-4">Our Menu</h1>
+      <p class="text-xl text-cream max-w-2xl mx-auto">
+        Handcrafted chocolate-orange delights, made fresh to order
+      </p>
+    </div>
+  </section>
+
+  <!-- Menu Items -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Chocolate-Orange Loaf Cake -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+          <div class="bg-gradient-to-br from-orange-light to-orange-warm h-48 flex items-center justify-center">
+            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-3 text-chocolate">Chocolate-Orange Loaf Cake</h3>
+            <p class="text-chocolate/80 mb-4 leading-relaxed">
+              Our signature loaf cake with rich chocolate and bright citrus notes. Moist, flavorful, and perfect for any occasion.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-orange-warm">$24</span>
+              <span class="text-sm text-chocolate/60">Per loaf</span>
+            </div>
+            <div class="mt-4 pt-4 border-t border-chocolate/10">
+              <p class="text-sm text-chocolate/70">
+                <span class="font-semibold">Ingredients:</span> Flour, sugar, butter, eggs, cocoa powder, fresh orange zest & juice, vanilla
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chocolate-Orange Cookies -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+          <div class="bg-gradient-to-br from-chocolate to-cocoa h-48 flex items-center justify-center">
+            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-3 text-chocolate">Chocolate-Orange Cookies</h3>
+            <p class="text-chocolate/80 mb-4 leading-relaxed">
+              Chewy cookies loaded with chocolate chips and infused with orange essence. The perfect sweet treat for any time of day.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-orange-warm">$18</span>
+              <span class="text-sm text-chocolate/60">Dozen</span>
+            </div>
+            <div class="mt-4 pt-4 border-t border-chocolate/10">
+              <p class="text-sm text-chocolate/70">
+                <span class="font-semibold">Ingredients:</span> Flour, sugar, butter, eggs, chocolate chips, orange zest, vanilla
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flourless Chocolate-Orange Cake -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 relative">
+          <div class="absolute top-4 right-4 z-10">
+            <span class="bg-orange-warm text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Gluten-Free
+            </span>
+          </div>
+          <div class="bg-gradient-to-br from-cocoa to-chocolate h-48 flex items-center justify-center">
+            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-3 text-chocolate">Flourless Chocolate-Orange Cake</h3>
+            <p class="text-chocolate/80 mb-4 leading-relaxed">
+              Decadent, fudgy, and completely gluten-free. Made with a starch blend instead of almond meal for those with nut allergies.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-orange-warm">$28</span>
+              <span class="text-sm text-chocolate/60">8-inch cake</span>
+            </div>
+            <div class="mt-4 pt-4 border-t border-chocolate/10">
+              <p class="text-sm text-chocolate/70">
+                <span class="font-semibold">Ingredients:</span> Chocolate, butter, eggs, sugar, gluten-free starch blend, orange zest & extract
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Allergen Notice -->
+      <div class="mt-16 bg-white rounded-xl p-8 shadow-lg border-l-4 border-orange-warm">
+        <h3 class="text-2xl font-bold mb-4 text-chocolate">Important Information</h3>
+        <div class="space-y-3 text-chocolate/80">
+          <p>
+            <span class="font-semibold">🏡 Made in a Home Kitchen:</span> All products are prepared in a cottage food operation that is not subject to California's food facility licensing or inspection.
+          </p>
+          <p>
+            <span class="font-semibold">🥜 Allergen-Friendly:</span> Our recipes do not contain almonds or tree nuts. However, products may contain wheat, eggs, dairy, and soy.
+          </p>
+          <p>
+            <span class="font-semibold">📦 Ordering:</span> All items are made fresh to order. Please allow 2-3 days for preparation.
+          </p>
+          <p>
+            <span class="font-semibold">❄️ Storage:</span> Store in an airtight container at room temperature for up to 5 days, or freeze for up to 3 months.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seasonal Note -->
+      <div class="mt-8 text-center">
+        <p class="text-lg text-chocolate/70">
+          🍊 Menu items may vary seasonally based on ingredient availability and special occasions.
+          <a href="/order" class="text-orange-warm hover:text-chocolate font-semibold underline">Contact us</a> for custom orders!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-orange-warm to-orange-light text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-4">Ready to Order?</h2>
+      <p class="text-xl mb-8 text-white/90">
+        Place your order today and experience the perfect blend of chocolate and orange.
+      </p>
+      <a href="/order" class="bg-chocolate hover:bg-cocoa text-white px-10 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
+        Place Your Order
+      </a>
+    </div>
+  </section>
+</Layout>

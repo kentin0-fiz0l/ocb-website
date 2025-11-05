@@ -1,16 +1,127 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-orange-light to-orange-warm text-white py-20 lg:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-5xl lg:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+          Orange Chocolate Bakery
+        </h1>
+        <p class="text-2xl lg:text-3xl mb-8 text-cream font-light">
+          Where Citrus Meets Cocoa
+        </p>
+        <p class="text-xl mb-10 max-w-2xl mx-auto text-white/90">
+          Freshly baked chocolate-orange treats, handcrafted with love in Campbell, CA
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/menu" class="bg-chocolate hover:bg-cocoa text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+            View Our Menu
+          </a>
+          <a href="/order" class="bg-white hover:bg-cream text-chocolate px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+            Place an Order
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#fef9f3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-20 bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our Story</h2>
+          <p class="text-lg mb-4 leading-relaxed">
+            Born from a passion for unexpected flavor combinations, Orange Chocolate Bakery brings together the bright, zesty notes of fresh orange with the rich, comforting warmth of chocolate.
+          </p>
+          <p class="text-lg mb-4 leading-relaxed">
+            Every treat is crafted by hand in our home kitchen in Campbell, California, following California's Cottage Food Laws. We use only the finest ingredients to create baked goods that are as memorable as they are delicious.
+          </p>
+          <p class="text-lg leading-relaxed">
+            Each bite tells a story of creativity, quality, and the joy of sharing something truly special.
+          </p>
+          <a href="/about" class="inline-block mt-6 text-orange-warm hover:text-chocolate font-semibold text-lg underline">
+            Learn more about us →
+          </a>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white rounded-2xl shadow-2xl p-8 transform hover:scale-105 transition duration-300">
+            <div class="bg-gradient-to-br from-orange-light to-orange-warm h-64 rounded-xl flex items-center justify-center">
+              <img src="/images/ocb-logo.png" alt="OCB Logo" class="h-48 w-auto drop-shadow-2xl" />
+            </div>
+            <p class="text-center mt-6 text-chocolate font-semibold text-xl">Sweet. Cozy. Classy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16">Why Choose OCB?</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-8 rounded-xl hover:shadow-xl transition">
+          <div class="bg-orange-warm/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Handcrafted Quality</h3>
+          <p class="text-lg text-chocolate/80">
+            Every item is made with care, using premium ingredients and time-tested recipes.
+          </p>
+        </div>
+
+        <div class="text-center p-8 rounded-xl hover:shadow-xl transition">
+          <div class="bg-orange-warm/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Freshly Baked</h3>
+          <p class="text-lg text-chocolate/80">
+            Made to order for maximum freshness and flavor in every bite.
+          </p>
+        </div>
+
+        <div class="text-center p-8 rounded-xl hover:shadow-xl transition">
+          <div class="bg-orange-warm/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Made with Love</h3>
+          <p class="text-lg text-chocolate/80">
+            A local Campbell business bringing joy through unique flavor combinations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-chocolate to-cocoa text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Taste the Magic?</h2>
+      <p class="text-xl mb-10 text-cream">
+        Order your chocolate-orange treats today and experience the perfect blend of citrus and cocoa.
+      </p>
+      <a href="/order" class="bg-orange-warm hover:bg-orange-light text-white px-10 py-5 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
+        Order Now
+      </a>
+    </div>
+  </section>
+</Layout>

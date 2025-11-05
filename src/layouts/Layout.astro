@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Orange Chocolate Bakery - Where Citrus Meets Cocoa. Freshly baked chocolate-orange treats from Campbell, CA." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/images/ocb-logo.png" />
+    <title>{title} | Orange Chocolate Bakery</title>
+  </head>
+  <body>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center space-x-3">
+            <img src="/images/ocb-logo.png" alt="OCB Logo" class="h-12 w-auto" />
+            <span class="text-2xl font-bold text-chocolate">OCB</span>
+          </a>
+
+          <div class="hidden md:flex space-x-8">
+            <a href="/" class={`text-lg hover:text-orange-warm transition ${currentPath === '/' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Home</a>
+            <a href="/menu" class={`text-lg hover:text-orange-warm transition ${currentPath === '/menu' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Menu</a>
+            <a href="/order" class={`text-lg hover:text-orange-warm transition ${currentPath === '/order' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Order</a>
+            <a href="/about" class={`text-lg hover:text-orange-warm transition ${currentPath === '/about' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>About</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="md:hidden text-chocolate hover:text-orange-warm">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a href="/" class="block py-2 text-lg text-chocolate hover:text-orange-warm">Home</a>
+          <a href="/menu" class="block py-2 text-lg text-chocolate hover:text-orange-warm">Menu</a>
+          <a href="/order" class="block py-2 text-lg text-chocolate hover:text-orange-warm">Order</a>
+          <a href="/about" class="block py-2 text-lg text-chocolate hover:text-orange-warm">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="min-h-screen">
+      <slot />
+    </main>
+
+    <footer class="bg-chocolate text-cream py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-orange-light">Orange Chocolate Bakery</h3>
+            <p class="text-sm">Freshly Baked Joy</p>
+            <p class="text-sm">Campbell, CA</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-orange-light">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-orange-light transition">Home</a></li>
+              <li><a href="/menu" class="hover:text-orange-light transition">Menu</a></li>
+              <li><a href="/order" class="hover:text-orange-light transition">Order</a></li>
+              <li><a href="/about" class="hover:text-orange-light transition">About</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4 text-orange-light">Contact</h4>
+            <p class="text-sm mb-2">Made in a Home Kitchen</p>
+            <p class="text-sm">California Cottage Food Operation</p>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-cocoa text-center text-sm">
+          <p>&copy; {new Date().getFullYear()} Orange Chocolate Bakery. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
