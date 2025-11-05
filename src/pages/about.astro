@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="About" description="Learn about Orange Chocolate Bakery, our story, values, and commitment to quality baked goods in Campbell, CA.">
@@ -216,10 +217,10 @@ import Layout from '../layouts/Layout.astro';
         Join the Orange Chocolate Bakery family and taste the difference that passion and quality make.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/menu" class="bg-white hover:bg-cream text-chocolate px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+        <a href={`${base}menu`} class="bg-white hover:bg-cream text-chocolate px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
           View Our Menu
         </a>
-        <a href="/order" class="bg-chocolate hover:bg-cocoa text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+        <a href={`${base}order`} class="bg-chocolate hover:bg-cocoa text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
           Place an Order
         </a>
       </div>

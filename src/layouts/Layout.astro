@@ -8,6 +8,7 @@ interface Props {
 
 const { title, description = "Orange Chocolate Bakery - Where Citrus Meets Cocoa. Freshly baked chocolate-orange treats from Campbell, CA." } = Astro.props;
 const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -23,16 +24,16 @@ const currentPath = Astro.url.pathname;
     <nav class="bg-white shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
-          <a href="/" class="flex items-center space-x-3">
-            <img src="/images/ocb-logo.png" alt="OCB Logo" class="h-12 w-auto" />
+          <a href={base} class="flex items-center space-x-3">
+            <img src={`${base}images/ocb-logo.png`} alt="OCB Logo" class="h-12 w-auto" />
             <span class="text-2xl font-bold text-chocolate">OCB</span>
           </a>
 
           <div class="hidden md:flex space-x-8">
-            <a href="/" class={`text-lg hover:text-orange-warm transition ${currentPath === '/' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Home</a>
-            <a href="/menu" class={`text-lg hover:text-orange-warm transition ${currentPath === '/menu' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Menu</a>
-            <a href="/order" class={`text-lg hover:text-orange-warm transition ${currentPath === '/order' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Order</a>
-            <a href="/about" class={`text-lg hover:text-orange-warm transition ${currentPath === '/about' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>About</a>
+            <a href={base} class={`text-lg hover:text-orange-warm transition ${currentPath === base || currentPath === base + '/' ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Home</a>
+            <a href={`${base}menu`} class={`text-lg hover:text-orange-warm transition ${currentPath.includes('/menu') ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Menu</a>
+            <a href={`${base}order`} class={`text-lg hover:text-orange-warm transition ${currentPath.includes('/order') ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>Order</a>
+            <a href={`${base}about`} class={`text-lg hover:text-orange-warm transition ${currentPath.includes('/about') ? 'text-orange-warm font-semibold' : 'text-chocolate'}`}>About</a>
           </div>
 
           <!-- Mobile menu button -->
@@ -45,10 +46,10 @@ const currentPath = Astro.url.pathname;
 
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden pb-4">
-          <a href="/" class="block py-2 text-lg text-chocolate hover:text-orange-warm">Home</a>
-          <a href="/menu" class="block py-2 text-lg text-chocolate hover:text-orange-warm">Menu</a>
-          <a href="/order" class="block py-2 text-lg text-chocolate hover:text-orange-warm">Order</a>
-          <a href="/about" class="block py-2 text-lg text-chocolate hover:text-orange-warm">About</a>
+          <a href={base} class="block py-2 text-lg text-chocolate hover:text-orange-warm">Home</a>
+          <a href={`${base}menu`} class="block py-2 text-lg text-chocolate hover:text-orange-warm">Menu</a>
+          <a href={`${base}order`} class="block py-2 text-lg text-chocolate hover:text-orange-warm">Order</a>
+          <a href={`${base}about`} class="block py-2 text-lg text-chocolate hover:text-orange-warm">About</a>
         </div>
       </div>
     </nav>
@@ -69,10 +70,10 @@ const currentPath = Astro.url.pathname;
           <div>
             <h4 class="font-semibold mb-4 text-orange-light">Quick Links</h4>
             <ul class="space-y-2 text-sm">
-              <li><a href="/" class="hover:text-orange-light transition">Home</a></li>
-              <li><a href="/menu" class="hover:text-orange-light transition">Menu</a></li>
-              <li><a href="/order" class="hover:text-orange-light transition">Order</a></li>
-              <li><a href="/about" class="hover:text-orange-light transition">About</a></li>
+              <li><a href={base} class="hover:text-orange-light transition">Home</a></li>
+              <li><a href={`${base}menu`} class="hover:text-orange-light transition">Menu</a></li>
+              <li><a href={`${base}order`} class="hover:text-orange-light transition">Order</a></li>
+              <li><a href={`${base}about`} class="hover:text-orange-light transition">About</a></li>
             </ul>
           </div>
 

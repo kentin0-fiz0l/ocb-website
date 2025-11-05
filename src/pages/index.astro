@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Home">
@@ -17,10 +18,10 @@ import Layout from '../layouts/Layout.astro';
           Award-worthy chocolate-orange creations, baked fresh daily in Campbell, CA. Every bite is a celebration!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/menu" class="bg-chocolate hover:bg-cocoa text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+          <a href={`${base}menu`} class="bg-chocolate hover:bg-cocoa text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
             View Our Menu
           </a>
-          <a href="/order" class="bg-white hover:bg-cream text-chocolate px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+          <a href={`${base}order`} class="bg-white hover:bg-cream text-chocolate px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
             Place an Order
           </a>
         </div>
@@ -81,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-lg leading-relaxed">
             Whether you're celebrating a milestone, treating yourself, or gifting someone special, our baked goods transform ordinary moments into extraordinary memories. That's not just our promise—it's our passion.
           </p>
-          <a href="/about" class="inline-block mt-6 text-orange-warm hover:text-chocolate font-semibold text-lg underline">
+          <a href={`${base}about`} class="inline-block mt-6 text-orange-warm hover:text-chocolate font-semibold text-lg underline">
             Learn more about us →
           </a>
         </div>
@@ -150,7 +151,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-xl mb-10 text-cream">
         Order your chocolate-orange treats today and experience the perfect blend of citrus and cocoa.
       </p>
-      <a href="/order" class="bg-orange-warm hover:bg-orange-light text-white px-10 py-5 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
+      <a href={`${base}order`} class="bg-orange-warm hover:bg-orange-light text-white px-10 py-5 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
         Order Now
       </a>
     </div>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Menu" description="Explore our delicious chocolate-orange baked goods, including loaf cakes, cookies, and flourless cakes.">
@@ -201,7 +202,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="mt-8 text-center">
         <p class="text-lg text-chocolate/70">
           🍊 Menu items may vary seasonally based on ingredient availability and special occasions.
-          <a href="/order" class="text-orange-warm hover:text-chocolate font-semibold underline">Contact us</a> for custom orders!
+          <a href={`${base}order`} class="text-orange-warm hover:text-chocolate font-semibold underline">Contact us</a> for custom orders!
         </p>
       </div>
     </div>
@@ -214,7 +215,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-xl mb-8 text-white/90">
         Place your order today and experience the perfect blend of chocolate and orange.
       </p>
-      <a href="/order" class="bg-chocolate hover:bg-cocoa text-white px-10 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
+      <a href={`${base}order`} class="bg-chocolate hover:bg-cocoa text-white px-10 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
         Place Your Order
       </a>
     </div>
