@@ -130,8 +130,25 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div>
+              <label for="delivery-method" class="block text-sm font-semibold text-chocolate mb-2">
+                Delivery Method *
+              </label>
+              <select
+                id="delivery-method"
+                name="delivery-method"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition bg-white"
+              >
+                <option value="">Select delivery method...</option>
+                <option value="pickup">Pickup in Campbell, CA</option>
+                <option value="local-delivery">Local Delivery (additional fee)</option>
+                <option value="shipping">Shipping (additional fee)</option>
+              </select>
+            </div>
+
+            <div>
               <label for="pickup-date" class="block text-sm font-semibold text-chocolate mb-2">
-                Preferred Pickup Date *
+                Preferred Date *
               </label>
               <input
                 type="date"
@@ -140,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
                 required
                 class="w-full px-4 py-3 rounded-lg border border-chocolate/20 focus:border-orange-warm focus:ring-2 focus:ring-orange-warm/20 outline-none transition"
               />
-              <p class="text-sm text-chocolate/60 mt-2">⏰ Please allow 2-3 business days for preparation</p>
+              <p class="text-sm text-chocolate/60 mt-2">⏰ Please allow 48 hours (2 days) for preparation</p>
             </div>
 
             <div>
@@ -194,23 +211,63 @@ import Layout from '../layouts/Layout.astro';
         <!-- Order Information -->
         <div class="space-y-8">
 
-          <!-- Pickup Information -->
+          <!-- Business Hours & Pickup -->
           <div class="bg-white rounded-2xl shadow-xl p-8">
-            <div class="flex items-start space-x-4">
-              <div class="bg-orange-warm/10 p-3 rounded-lg">
-                <svg class="w-8 h-8 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="bg-orange-warm/10 p-3 rounded-lg">
+                  <svg class="w-8 h-8 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold mb-3 text-chocolate">Business Hours</h3>
+                  <p class="text-chocolate/80 mb-2 font-semibold">
+                    Flexible Scheduling
+                  </p>
+                  <p class="text-chocolate/70 text-sm">
+                    Pickup times are coordinated when your order is confirmed. We'll work with your schedule to find a convenient time!
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 class="text-2xl font-bold mb-3 text-chocolate">Pickup Location</h3>
-                <p class="text-chocolate/80 mb-2">
-                  Campbell, CA
-                </p>
-                <p class="text-chocolate/70 text-sm">
-                  Exact address will be provided upon order confirmation
-                </p>
+
+              <div class="border-t border-chocolate/10 pt-6">
+                <div class="flex items-start space-x-4">
+                  <div class="bg-orange-warm/10 p-3 rounded-lg">
+                    <svg class="w-8 h-8 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold mb-3 text-chocolate">Pickup Location</h3>
+                    <p class="text-chocolate/80 mb-2">
+                      Campbell, CA
+                    </p>
+                    <p class="text-chocolate/70 text-sm">
+                      Exact address will be provided upon order confirmation
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-chocolate/10 pt-6">
+                <div class="flex items-start space-x-4">
+                  <div class="bg-orange-warm/10 p-3 rounded-lg">
+                    <svg class="w-8 h-8 text-orange-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold mb-3 text-chocolate">Lead Time</h3>
+                    <p class="text-chocolate/80 mb-2 font-semibold">
+                      48 Hours (2 Days)
+                    </p>
+                    <p class="text-chocolate/70 text-sm">
+                      Orders require at least 48 hours notice for fresh preparation. Rush orders may be accommodated—just ask!
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -251,7 +308,7 @@ import Layout from '../layouts/Layout.astro';
                 <div>
                   <h4 class="font-semibold text-chocolate mb-1">Fresh Preparation</h4>
                   <p class="text-chocolate/70 text-sm">
-                    Your treats are freshly baked with love (allow 2-3 days).
+                    Your treats are freshly baked with love (48-hour lead time).
                   </p>
                 </div>
               </div>
@@ -304,14 +361,14 @@ import Layout from '../layouts/Layout.astro';
         <div class="bg-cream rounded-xl p-6">
           <h4 class="text-xl font-bold text-chocolate mb-2">How far in advance should I order?</h4>
           <p class="text-chocolate/80">
-            We recommend placing orders at least 2-3 days in advance to ensure availability and proper preparation time.
+            We require at least 48 hours (2 days) advance notice to ensure availability and proper preparation time. Need something sooner? Contact us—we'll do our best to accommodate rush orders!
           </p>
         </div>
 
         <div class="bg-cream rounded-xl p-6">
-          <h4 class="text-xl font-bold text-chocolate mb-2">Do you deliver?</h4>
+          <h4 class="text-xl font-bold text-chocolate mb-2">Do you deliver or ship?</h4>
           <p class="text-chocolate/80">
-            Currently, we only offer pickup in Campbell, CA. Delivery options may be available in the future.
+            Yes! We offer pickup in Campbell, CA, local delivery to nearby areas (additional fee), and shipping options (additional fee). Select your preferred delivery method in the order form, and we'll confirm availability and pricing.
           </p>
         </div>
 
