@@ -8,9 +8,25 @@ const base = import.meta.env.BASE_URL;
   <section class="bg-gradient-to-br from-chocolate to-cocoa text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl lg:text-6xl font-bold mb-4">Our Menu</h1>
-      <p class="text-xl text-cream max-w-2xl mx-auto">
+      <p class="text-xl text-cream max-w-2xl mx-auto mb-8">
         Handcrafted chocolate-orange delights, made fresh to order
       </p>
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <button class="filter-btn active px-6 py-2 rounded-full bg-white text-chocolate font-semibold hover:bg-cream transition" data-category="all">
+          All Items
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-white/10 text-white font-semibold hover:bg-white/20 transition" data-category="cakes">
+          Cakes & Loaves
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-white/10 text-white font-semibold hover:bg-white/20 transition" data-category="cookies">
+          Cookies
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-white/10 text-white font-semibold hover:bg-white/20 transition" data-category="gifts">
+          Gift Sets
+        </button>
+      </div>
     </div>
   </section>
 
@@ -20,56 +36,116 @@ const base = import.meta.env.BASE_URL;
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Chocolate-Orange Loaf Cake -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="menu-item relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300" data-category="cakes">
+          <!-- Badges -->
+          <div class="absolute top-4 left-4 z-10 flex gap-2">
+            <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+              ⭐ Customer Favorite
+            </span>
+          </div>
+
           <div class="bg-gradient-to-br from-orange-light to-orange-warm h-48 flex items-center justify-center">
             <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
               <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
             </svg>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-chocolate">Signature Chocolate-Orange Loaf</h3>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-chocolate">Signature Chocolate-Orange Loaf</h3>
+              <div class="flex gap-1 ml-2">
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded" title="Nut-free">🥜❌</span>
+              </div>
+            </div>
+
             <p class="text-chocolate/80 mb-4 leading-relaxed">
               Our bestseller! Supremely moist chocolate loaf cake infused with fresh orange zest and a hint of Grand Marnier. Perfect for breakfast, dessert, or gifting.
             </p>
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-orange-warm">$26</span>
-              <span class="text-sm text-chocolate/60">9x5 loaf</span>
-            </div>
-            <div class="mt-4 pt-4 border-t border-chocolate/10">
+
+            <!-- Pairing Suggestion -->
+            <div class="mb-4 p-3 bg-orange-warm/5 rounded-lg">
               <p class="text-sm text-chocolate/70">
-                <span class="font-semibold">Serves:</span> 8-10 slices
+                <span class="font-semibold">☕ Perfect with:</span> Morning coffee, afternoon tea, or a glass of milk
               </p>
             </div>
+
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-bold text-orange-warm">$26</span>
+              <span class="text-sm text-chocolate/60">9x5 loaf • 8-10 slices</span>
+            </div>
+
+            <!-- Expandable Ingredients -->
+            <details class="mb-4">
+              <summary class="cursor-pointer text-sm font-semibold text-chocolate/70 hover:text-chocolate">
+                View Ingredients ▼
+              </summary>
+              <div class="mt-2 p-3 bg-cream rounded text-sm text-chocolate/70">
+                Flour, sugar, cocoa powder, eggs, butter, fresh orange zest, orange juice, Grand Marnier, vanilla, baking soda, salt
+              </div>
+            </details>
+
+            <!-- Order Button -->
+            <a href={`${base}order`} class="block w-full bg-orange-warm hover:bg-orange-light text-white text-center font-semibold py-3 rounded-lg transition">
+              Order This →
+            </a>
           </div>
         </div>
 
         <!-- Chocolate-Orange Cookies -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="menu-item relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300" data-category="cookies">
           <div class="bg-gradient-to-br from-chocolate to-cocoa h-48 flex items-center justify-center">
             <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
             </svg>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-chocolate">Triple Chocolate-Orange Cookies</h3>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-chocolate">Triple Chocolate-Orange Cookies</h3>
+              <div class="flex gap-1 ml-2">
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded" title="Nut-free">🥜❌</span>
+              </div>
+            </div>
+
             <p class="text-chocolate/80 mb-4 leading-relaxed">
               Soft-baked cookies with dark, milk, and white chocolate chunks, candied orange peel, and a sprinkle of flaky sea salt. Irresistibly chewy!
             </p>
-            <div class="space-y-2">
+
+            <!-- Pairing Suggestion -->
+            <div class="mb-4 p-3 bg-orange-warm/5 rounded-lg">
+              <p class="text-sm text-chocolate/70">
+                <span class="font-semibold">☕ Perfect with:</span> Cold milk, espresso, or hot chocolate
+              </p>
+            </div>
+
+            <div class="space-y-2 mb-4">
               <div class="flex items-center justify-between">
                 <span class="text-2xl font-bold text-orange-warm">$10</span>
-                <span class="text-sm text-chocolate/60">Half dozen</span>
+                <span class="text-sm text-chocolate/60">Half dozen (6 cookies)</span>
               </div>
               <div class="flex items-center justify-between">
                 <span class="text-2xl font-bold text-orange-warm">$18</span>
-                <span class="text-sm text-chocolate/60">Full dozen</span>
+                <span class="text-sm text-chocolate/60">Full dozen (12 cookies)</span>
               </div>
             </div>
+
+            <!-- Expandable Ingredients -->
+            <details class="mb-4">
+              <summary class="cursor-pointer text-sm font-semibold text-chocolate/70 hover:text-chocolate">
+                View Ingredients ▼
+              </summary>
+              <div class="mt-2 p-3 bg-cream rounded text-sm text-chocolate/70">
+                Flour, butter, brown sugar, white sugar, eggs, dark chocolate chunks, milk chocolate chunks, white chocolate chunks, candied orange peel, vanilla, baking soda, sea salt
+              </div>
+            </details>
+
+            <!-- Order Button -->
+            <a href={`${base}order`} class="block w-full bg-orange-warm hover:bg-orange-light text-white text-center font-semibold py-3 rounded-lg transition">
+              Order This →
+            </a>
           </div>
         </div>
 
         <!-- Flourless Chocolate-Orange Cake -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 relative">
+        <div class="menu-item relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300" data-category="cakes">
           <div class="absolute top-4 right-4 z-10">
             <span class="bg-orange-warm text-white px-3 py-1 rounded-full text-sm font-semibold">
               Gluten-Free
@@ -81,27 +157,52 @@ const base = import.meta.env.BASE_URL;
             </svg>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-chocolate">Flourless Fudge Torte</h3>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-chocolate">Flourless Fudge Torte</h3>
+              <div class="flex gap-1 ml-2">
+                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded" title="Gluten-free">🌾❌</span>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded" title="Nut-free">🥜❌</span>
+              </div>
+            </div>
+
             <p class="text-chocolate/80 mb-4 leading-relaxed">
               Ultra-decadent, dense chocolate torte with orange essence. Completely gluten-free and nut-free. Elegant enough for special celebrations!
             </p>
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-orange-warm">$32</span>
-              <span class="text-sm text-chocolate/60">8-inch torte</span>
-            </div>
-            <div class="mt-4 pt-4 border-t border-chocolate/10">
+
+            <!-- Pairing Suggestion -->
+            <div class="mb-4 p-3 bg-orange-warm/5 rounded-lg">
               <p class="text-sm text-chocolate/70">
-                <span class="font-semibold">Serves:</span> 10-12 slices
+                <span class="font-semibold">🍷 Perfect with:</span> Red wine, port, or vanilla ice cream
               </p>
             </div>
+
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-bold text-orange-warm">$32</span>
+              <span class="text-sm text-chocolate/60">8-inch torte • 10-12 slices</span>
+            </div>
+
+            <!-- Expandable Ingredients -->
+            <details class="mb-4">
+              <summary class="cursor-pointer text-sm font-semibold text-chocolate/70 hover:text-chocolate">
+                View Ingredients ▼
+              </summary>
+              <div class="mt-2 p-3 bg-cream rounded text-sm text-chocolate/70">
+                Dark chocolate, butter, eggs, sugar, cocoa powder, orange zest, orange extract, vanilla, gluten-free starch blend
+              </div>
+            </details>
+
+            <!-- Order Button -->
+            <a href={`${base}order`} class="block w-full bg-orange-warm hover:bg-orange-light text-white text-center font-semibold py-3 rounded-lg transition">
+              Order This →
+            </a>
           </div>
         </div>
 
         <!-- Discovery Sampler Box - NEW -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 relative">
+        <div class="menu-item relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300" data-category="gifts">
           <div class="absolute top-4 right-4 z-10">
             <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-              Best Value
+              💰 Best Value
             </span>
           </div>
           <div class="bg-gradient-to-br from-orange-warm via-orange-light to-cream h-48 flex items-center justify-center">
@@ -110,22 +211,44 @@ const base = import.meta.env.BASE_URL;
             </svg>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-chocolate">Discovery Sampler Box</h3>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-chocolate">Discovery Sampler Box</h3>
+              <div class="flex gap-1 ml-2">
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded" title="Nut-free">🥜❌</span>
+              </div>
+            </div>
+
             <p class="text-chocolate/80 mb-4 leading-relaxed">
               Can't decide? Try it all! Includes 4 loaf slices, 6 cookies, and 2 torte slices. Perfect for first-time customers or sharing with friends.
             </p>
-            <div class="flex items-center justify-between">
+
+            <!-- What's Included -->
+            <div class="mb-4 p-3 bg-green-50 rounded-lg border border-green-200">
+              <p class="text-sm font-semibold text-chocolate mb-2">📦 What's Included:</p>
+              <ul class="text-sm text-chocolate/70 space-y-1">
+                <li>• 4 Signature Loaf Slices</li>
+                <li>• 6 Triple Chocolate Cookies</li>
+                <li>• 2 Flourless Torte Slices</li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between mb-4">
               <div>
                 <span class="text-2xl font-bold text-orange-warm">$35</span>
                 <span class="text-sm text-chocolate/60 ml-2 line-through">$42 value</span>
               </div>
-              <span class="text-sm font-semibold text-green-600">Save $7</span>
+              <span class="text-sm font-semibold text-green-600">Save $7!</span>
             </div>
+
+            <!-- Order Button -->
+            <a href={`${base}order`} class="block w-full bg-orange-warm hover:bg-orange-light text-white text-center font-semibold py-3 rounded-lg transition">
+              Order This →
+            </a>
           </div>
         </div>
 
         <!-- Seasonal: Winter Spice Edition - NEW -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 relative">
+        <div class="menu-item relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300" data-category="cakes">
           <div class="absolute top-4 right-4 z-10">
             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
               ❄️ Seasonal
@@ -137,43 +260,97 @@ const base = import.meta.env.BASE_URL;
             </svg>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-chocolate">Winter Spice Loaf</h3>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-chocolate">Winter Spice Loaf</h3>
+              <div class="flex gap-1 ml-2">
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded" title="Nut-free">🥜❌</span>
+              </div>
+            </div>
+
             <p class="text-chocolate/80 mb-4 leading-relaxed">
               Limited edition! Our chocolate-orange loaf enhanced with cinnamon, nutmeg, and ginger. Cozy holiday flavors in every bite.
             </p>
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-orange-warm">$28</span>
-              <span class="text-sm text-chocolate/60">9x5 loaf</span>
-            </div>
-            <div class="mt-4 pt-4 border-t border-chocolate/10">
-              <p class="text-sm text-blue-700 font-semibold">
-                🎄 Available Nov-Jan only
+
+            <!-- Pairing Suggestion -->
+            <div class="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+              <p class="text-sm text-chocolate/70">
+                <span class="font-semibold">☕ Perfect with:</span> Chai latte, hot cider, or eggnog
               </p>
             </div>
+
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-bold text-orange-warm">$28</span>
+              <span class="text-sm text-chocolate/60">9x5 loaf • 8-10 slices</span>
+            </div>
+
+            <div class="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+              <p class="text-sm text-blue-700 font-semibold">
+                🎄 Available November-January only
+              </p>
+            </div>
+
+            <!-- Expandable Ingredients -->
+            <details class="mb-4">
+              <summary class="cursor-pointer text-sm font-semibold text-chocolate/70 hover:text-chocolate">
+                View Ingredients ▼
+              </summary>
+              <div class="mt-2 p-3 bg-cream rounded text-sm text-chocolate/70">
+                Flour, sugar, cocoa powder, eggs, butter, orange zest, orange juice, cinnamon, nutmeg, ginger, vanilla, baking soda, salt
+              </div>
+            </details>
+
+            <!-- Order Button -->
+            <a href={`${base}order`} class="block w-full bg-orange-warm hover:bg-orange-light text-white text-center font-semibold py-3 rounded-lg transition">
+              Order This →
+            </a>
           </div>
         </div>
 
         <!-- Mini Loaves Gift Set - NEW -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="menu-item relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300" data-category="gifts">
           <div class="bg-gradient-to-br from-pink-400 to-rose-500 h-48 flex items-center justify-center">
             <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
             </svg>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-3 text-chocolate">Mini Loaves Gift Set</h3>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-chocolate">Mini Loaves Gift Set</h3>
+              <div class="flex gap-1 ml-2">
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded" title="Nut-free">🥜❌</span>
+              </div>
+            </div>
+
             <p class="text-chocolate/80 mb-4 leading-relaxed">
               Three beautifully wrapped mini loaves (classic, flourless, and seasonal). Perfect for corporate gifts, hostess presents, or holiday giving.
             </p>
-            <div class="flex items-center justify-between">
+
+            <!-- What's Included -->
+            <div class="mb-4 p-3 bg-pink-50 rounded-lg border border-pink-200">
+              <p class="text-sm font-semibold text-chocolate mb-2">🎁 What's Included:</p>
+              <ul class="text-sm text-chocolate/70 space-y-1">
+                <li>• 1 Classic Chocolate-Orange Mini Loaf</li>
+                <li>• 1 Flourless Fudge Mini Loaf</li>
+                <li>• 1 Seasonal Spice Mini Loaf</li>
+                <li>• Gift box & ribbon included</li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between mb-4">
               <span class="text-2xl font-bold text-orange-warm">$42</span>
               <span class="text-sm text-chocolate/60">Gift box of 3</span>
             </div>
-            <div class="mt-4 pt-4 border-t border-chocolate/10">
+
+            <div class="mb-4 p-3 bg-pink-50 rounded-lg">
               <p class="text-sm text-chocolate/70">
-                <span class="font-semibold">🎁</span> Gift wrapping included
+                <span class="font-semibold">💌 Gift Note:</span> Add a personalized message in your order!
               </p>
             </div>
+
+            <!-- Order Button -->
+            <a href={`${base}order`} class="block w-full bg-orange-warm hover:bg-orange-light text-white text-center font-semibold py-3 rounded-lg transition">
+              Order This →
+            </a>
           </div>
         </div>
 
@@ -190,7 +367,7 @@ const base = import.meta.env.BASE_URL;
             <span class="font-semibold">🥜 Allergen-Friendly:</span> Our recipes do not contain almonds or tree nuts. However, products may contain wheat, eggs, dairy, and soy.
           </p>
           <p>
-            <span class="font-semibold">📦 Ordering:</span> All items are made fresh to order. Please allow 2-3 days for preparation.
+            <span class="font-semibold">📦 Ordering:</span> All items are made fresh to order. Please allow 48 hours (2 days) for preparation.
           </p>
           <p>
             <span class="font-semibold">❄️ Storage:</span> Store in an airtight container at room temperature for up to 5 days, or freeze for up to 3 months.
@@ -220,4 +397,52 @@ const base = import.meta.env.BASE_URL;
       </a>
     </div>
   </section>
+
+  <!-- Category Filtering Script -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        // Update active button styling
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-white', 'text-chocolate');
+          btn.classList.add('bg-white/10', 'text-white');
+        });
+        button.classList.remove('bg-white/10', 'text-white');
+        button.classList.add('active', 'bg-white', 'text-chocolate');
+
+        // Filter menu items
+        menuItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+
+          if (category === 'all' || itemCategory === category) {
+            item.style.display = 'block';
+            item.style.animation = 'fadeIn 0.5s ease-in';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Add fade-in animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 </Layout>
