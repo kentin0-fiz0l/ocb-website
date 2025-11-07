@@ -99,8 +99,100 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Featured Products Section -->
   <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-4">Featured Favorites</h2>
+        <p class="text-xl text-chocolate/70">Discover our most-loved chocolate-orange creations</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <!-- Signature Loaf -->
+        <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
+          <div class="bg-gradient-to-br from-orange-light to-orange-warm h-48 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-chocolate/20 group-hover:bg-chocolate/30 transition"></div>
+            <svg class="w-24 h-24 text-white opacity-70 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-chocolate">Signature Loaf</h3>
+              <span class="text-xs bg-yellow-500 text-white px-2 py-1 rounded-full font-bold">⭐ Bestseller</span>
+            </div>
+            <p class="text-chocolate/70 mb-4 text-sm">
+              Supremely moist chocolate loaf with fresh orange zest and Grand Marnier
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-orange-warm">$26</span>
+              <a href={`${base}menu`} class="text-chocolate hover:text-orange-warm font-semibold text-sm underline">
+                View Details →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Triple Chocolate Cookies -->
+        <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
+          <div class="bg-gradient-to-br from-chocolate to-cocoa h-48 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-orange-warm/20 group-hover:bg-orange-warm/30 transition"></div>
+            <svg class="w-24 h-24 text-white opacity-70 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-chocolate">Triple Chocolate Cookies</h3>
+            </div>
+            <p class="text-chocolate/70 mb-4 text-sm">
+              Soft-baked with dark, milk, and white chocolate chunks plus candied orange peel
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-orange-warm">$10</span>
+              <a href={`${base}menu`} class="text-chocolate hover:text-orange-warm font-semibold text-sm underline">
+                View Details →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discovery Sampler Box -->
+        <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
+          <div class="bg-gradient-to-br from-orange-warm via-orange-light to-cream h-48 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-chocolate/20 group-hover:bg-chocolate/30 transition"></div>
+            <svg class="w-24 h-24 text-white opacity-70 relative z-10" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-chocolate">Discovery Sampler</h3>
+              <span class="text-xs bg-green-600 text-white px-2 py-1 rounded-full font-bold">💰 Best Value</span>
+            </div>
+            <p class="text-chocolate/70 mb-4 text-sm">
+              Can't decide? Try everything! Loaf slices, cookies, and torte samples
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-orange-warm">$35</span>
+              <a href={`${base}menu`} class="text-chocolate hover:text-orange-warm font-semibold text-sm underline">
+                View Details →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href={`${base}menu`} class="inline-block bg-orange-warm hover:bg-orange-light text-white px-8 py-4 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl">
+          Browse Full Menu →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16">Why Choose OCB?</h2>
 
@@ -151,9 +243,14 @@ const base = import.meta.env.BASE_URL;
       <p class="text-xl mb-10 text-cream">
         Order your chocolate-orange treats today and experience the perfect blend of citrus and cocoa.
       </p>
-      <a href={`${base}order`} class="bg-orange-warm hover:bg-orange-light text-white px-10 py-5 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
-        Order Now
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`${base}menu`} class="bg-white hover:bg-cream text-chocolate px-10 py-5 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
+          Browse Menu
+        </a>
+        <a href={`${base}order`} class="bg-orange-warm hover:bg-orange-light text-white px-10 py-5 rounded-full text-lg font-semibold transition shadow-lg hover:shadow-xl inline-block">
+          Order Now
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
